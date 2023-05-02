@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>JavaScript Quiz</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="container">
+  <div id="quiz">
+    <div class="quiz_logo">
+      <img src="./img/logo.svg" alt="">
+    </div>
+    <div id="question-slide">
+      <div class="quiz_grid">
+        <div class="quiz_grid-img">
+          <img id="question-image" src="" >
+          <div id="question-counter-mob" class="quiz_grid-img-count"></div>
+        </div>
+        <div class="quiz_grid-content">
+          <div class="quiz_grid-content-header">
+            <div class="quiz_grid-content-header-title" id="question-title"></div>
+            <div class="quiz_grid-content-header-counter" id="question-counter"></div>
+          </div>
+          <div id="answer-options" class="quiz_grid-content-answers">
+            <label>
+              <input type="radio" name="answer" value="1">
+              <span class="answer-option" id="answer-option-1"></span>
+              <span class="checkmark"></span>
+              <div class="quiz_grid-content-answers-check">
+                <span class="answer-check" id="answer-check-1"></span>
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="answer" value="2">
+              <span class="answer-option"  id="answer-option-2"></span>
+              <span class="checkmark"></span>
+              <div class="quiz_grid-content-answers-check">
+                <span class="answer-check" id="answer-check-2"></span>
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="answer" value="3">
+              <span class="answer-option"  id="answer-option-3"></span>
+              <span class="checkmark"></span>
+              <div class="quiz_grid-content-answers-check">
+                <span class="answer-check" id="answer-check-3"></span>
+              </div>
+            </label>
+          </div>
+          <div>
+            <button class="button" id="submit-answer">Далее</button>
+          </div>
+          <p class="quiz_grid-content-author" id="question-image-author"></p>
+        </div>
+      </div>
+
+
+    </div>
+    <div id="answer-slide">
+      <div class="quiz_grid">
+        <div class="quiz_grid-img">
+          <img id="answer-image" src="" >
+          <div id="answer-counter-mob" class="quiz_grid-img-count"></div>
+
+        </div>
+        <div class="quiz_grid-content">
+          <div class="quiz_grid-content-header-title" id="answer-title"></div>
+          <p class="quiz_grid-content-header-title" id="answer-title1"></p>
+          <div class="quiz_grid-content-author" id="answer-image-author"></div>
+          <div class="quiz_grid-content-answers-block">
+            <p class="quiz_grid-content-answers-block-text" id="answer-text"></p>
+            <div class="quiz_grid-content-answers-block-btn">
+              <button class="button" id="next-question"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="result-slide">
+      <div class="quiz_grid">
+        <div class="quiz_grid-content result">
+          <div class="quiz_grid-content-header">
+            <div class="quiz_grid-content-header-title result" id="result-title"></div>
+          </div>
+          <div class="quiz_grid-content-answers-block result">
+            <p class="quiz_grid-content-answers-block-text" id="result-text"></p>
+            <div class="quiz_grid-content-answers-block-btn">
+              <button class="button" id="restart">еше раз</button>
+            </div>
+            <div id="result-image-author"  class="quiz_grid-content-author result"></div>
+          </div>
+        </div>
+        <div  class="quiz_grid-img result">
+          <img id="result-image" src="" >
+          <div class="question-counter-mob"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+  <script src="script.js"></script>
+</body>
+</html>
