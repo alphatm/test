@@ -7,8 +7,7 @@ body{
 }
 img{max-width: 100%;}
 .container{
-  display: flow-root;
-  box-sizing: content-box;
+  display: block;
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
@@ -38,6 +37,9 @@ img{max-width: 100%;}
     &-img{
       position: relative;
       width: 44%;
+      @media (max-width: 765px){
+        width: 100%;
+      }
       &-count{
         position: absolute;
         right: 0;
@@ -46,10 +48,7 @@ img{max-width: 100%;}
           display: none;
         }
       }
-      @media (max-width: 765px){
-        width: 100%;
-      }
-      &.result{
+      &-result{
         @media (max-width: 765px){
           order: 0;
         }
@@ -87,7 +86,7 @@ img{max-width: 100%;}
       @media (max-width: 765px){
         padding-bottom: 40px;
       }
-      &.result{
+      &-result{
         @media (max-width: 765px){
           order: 1;
         }
@@ -106,7 +105,7 @@ img{max-width: 100%;}
             font-size: 28px;
             line-height: 32px;
           }
-          &.result{
+          &-result{
             font-weight: 700;
             font-size: 48px;
             @media (max-width: 765px){
@@ -134,7 +133,7 @@ img{max-width: 100%;}
         @media (max-width: 765px){
           font-size: 14px;
         }
-        &.result{
+        &-result{
           right: inherit;
           left: 0;
           @media (max-width: 765px){
@@ -159,9 +158,10 @@ img{max-width: 100%;}
             position: relative;
             left: inherit;
           }
-          &.result{
+          &-result{
             left: inherit;
             right: -75px;
+            z-index: 1;
             @media (max-width: 765px){
               right: inherit;
             }
@@ -181,7 +181,7 @@ img{max-width: 100%;}
             }
           }
         }
-        label{
+        &-label{
           position: relative;
           margin-bottom: 30px;
           font-weight: 400;
@@ -192,17 +192,60 @@ img{max-width: 100%;}
           @media (max-width: 765px){
             height: 36px;
           }
-        }
-        .answer-option{
-          padding-left: 100px;
-          display: block;
-          width: 100%;
-          z-index: 1;
-          @media (max-width: 765px){
-            padding-left: 70px;
-            font-size: 16px;
+          &-option{
+            padding-left: 100px;
+            display: block;
+            width: 100%;
+            z-index: 1;
+            @media (max-width: 765px){
+              padding-left: 70px;
+              font-size: 16px;
+            }
+          }
+          &-input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            &:checked ~ .quiz_grid-content-answers-label-checkmark:after {
+              display: block;
+            }
+          }
+          &-checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 54px;
+            width: 54px;
+            background-color: #eee;
+            border-radius: 50%;
+            border: 4px solid #000000;
+            @media (max-width: 765px){
+              height: 36px;
+              width: 36px;
+            }
+            &:after{
+              content: "";
+              position: absolute;
+              display: none;
+              top: 16px;
+              left: 15px;
+              width: 37px;
+              height: 22px;
+              border-radius: 50%;
+              /* background: white; */
+              background-image: url(../img/check.svg);
+              background-repeat: no-repeat;
+              background-size: auto;
+              @media (max-width: 765px){
+                top: 8px;
+                left: 7px;
+              }
+            }
           }
         }
+
         &-check{
           font-weight: 700;
           font-size: 26px;
@@ -217,50 +260,6 @@ img{max-width: 100%;}
         }
       }
     }
-    input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 54px;
-      width: 54px;
-      background-color: #eee;
-      border-radius: 50%;
-      border: 4px solid #000000;
-      @media (max-width: 765px){
-        height: 36px;
-        width: 36px;
-      }
-    }
-    .checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-    input:checked ~ .checkmark:after {
-      display: block;
-    }
-    .checkmark:after {
-      top: 16px;
-      left: 15px;
-      width: 37px;
-      height: 22px;
-      border-radius: 50%;
-      /* background: white; */
-      background-image: url(../img/check.svg);
-      background-repeat: no-repeat;
-      background-size: auto;
-      @media (max-width: 765px){
-        top: 8px;
-        left: 7px;
-      }
 
-    }
   }
 }
